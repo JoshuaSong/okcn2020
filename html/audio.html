@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>audio</title>
+  
+         <link href="../../Content/themes/jqmobile/jquery.mobile-1.2.0.css" rel="stylesheet"
+            type="text/css" />
+    <script src="../Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
+    <script src="../Scripts/audiojs/audio.min.js" type="text/javascript"></script>
+  
+</head>
+<style>
+ .audiojs audio { position: absolute; left: -1px; } 
+        .audiojs { width: 360px; height: 36px; background: #404040; overflow: hidden; font-family: monospace; font-size: 12px; 
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444)); 
+          background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%); 
+          -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); 
+          -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); } 
+        .audiojs .play-pause { width: 25px; height: 40px; padding: 4px 6px; margin: 0px; float: left; overflow: hidden; border-right: 1px solid #000; } 
+        .audiojs p { display: none; width: 25px; height: 40px; margin: 0px; cursor: pointer; } 
+        .audiojs .play { display: block; } 
+        .audiojs .scrubber { position: relative; float: left; width: 180px; background: #5a5a5a; height: 14px; margin: 10px; border-top: 1px solid #3f3f3f; border-left: 0px; border-bottom: 0px; overflow: hidden; } 
+        .audiojs .progress { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #ccc; z-index: 1; 
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc)); 
+          background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%); } 
+        .audiojs .loaded { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #000; 
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222)); 
+          background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%); } 
+        .audiojs .time {  float: left; height: 36px; line-height: 36px; margin: 0px 0px 0px 6px; padding: 0px 6px 0px 12px; border-left: 1px solid #000; color: #ddd; text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5); } 
+        .audiojs .time em { padding: 0px 2px 0px 0px; color: #f9f9f9; font-style: normal; } 
+        .audiojs .time strong { padding: 0px 0px 0px 2px; font-weight: normal; } 
+        .audiojs .error-message { float: left; display: none; margin: 0px 10px; height: 36px; width: 400px; overflow: hidden; line-height: 36px; white-space: nowrap; color: #fff; 
+          text-overflow: ellipsis; -o-text-overflow: ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis; } 
+        .audiojs .error-message a { color: #eee; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #999; white-space: wrap; } 
+        
+        .audiojs .play { background: url("../Scripts/audiojs/player-graphics.gif") -2px -1px no-repeat; } 
+        .audiojs .loading { background: url("../Scripts/audiojs/player-graphics.gif") -2px -31px no-repeat; } 
+        .audiojs .error { background: url("../Scripts/audiojs/player-graphics.gif") -2px -61px no-repeat; } 
+        .audiojs .pause { background: url("../Scripts/audiojs/player-graphics.gif") -2px -91px no-repeat; } 
+        
+        .playing .play, .playing .loading, .playing .error { display: none; } 
+        .playing .pause { display: block; } 
+        
+        .loading .play, .loading .pause, .loading .error { display: none; } 
+        .loading .loading { display: block; } 
+        
+        .error .time, .error .play, .error .pause, .error .scrubber, .error .loading { display: none; } 
+        .error .error { display: block; } 
+        .error .play-pause p { cursor: auto; } 
+        .error .error-message { display: block; }
+        
+        
+</style>
+<script>
+   
+    audiojs.events.ready(function () {
+        var a1 = audiojs.create($("#player"), {
+
+            createPlayer: {
+                markup: false,
+                playPauseClass: 'play-pause',
+                scrubberClass: 'scrubber',
+                progressClass: 'progress',
+                loaderClass: 'loaded',
+                timeClass: 'time',
+                durationClass: 'duration',
+                playedClass: 'played',
+                errorMessageClass: 'error-message',
+                playingClass: 'playing',
+                loadingClass: 'loading',
+                errorClass: 'error'
+            },
+            autoplay: true,
+            trackEnded: function (e) {
+                $("#player").attr("src", "/audio/Bible/ko/keb/1-2.mp3");
+
+                document.getElementById('player').play();
+            }
+        });
+    
+
+    });
+
+    $(document).ready(function () {
+       
+        if (navigator.userAgent.toString().indexOf("Android") > 0) {
+            alert("android");
+        }
+
+        document.getElementById('player01').addEventListener('ended', function () {
+            this.currentTime = 0;
+            this.pause();
+            $("#player01").attr("src", "/audio/Bible/ko/keb/1-2.mp3");
+            document.getElementById('player01').play();
+
+        }, false);
+
+    });
+</script>
+<body>
+<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header">
+        <h3>
+            Header
+        </h3>
+    </div>
+    <div data-role="content">
+ 
+    <br/><br/>
+    
+    <div class="audiojs">
+  <audio id="player" preload="none"  src="http://ebible.cc/audio/Bible/ko/keb/1-3.mp3"> </audio>
+       <div class="play-pause">
+        <p class="play"></p>
+        <p class="pause"></p>
+        <p class="loading"></p>
+        <p class="error"></p>
+      </div>
+      <div class="scrubber">
+        <div class="progress"></div>
+        <div class="loaded"></div>
+      </div>
+
+      <div class="time">
+        <em class="played">00:00</em>/<strong class="duration">00:00</strong>
+      </div>
+
+      <div class="error-message"></div>
+    </div>
+    </div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+    <div style="float: right"> <a data-role="button" data-inline="true" data-theme="c" href="#" data-icon="arrow-r" data-iconpos="notext" style="top:0px"></a></div>
+    <div style=" float:left"><a href="#" data-role="button" data-inline="true" data-theme="c" data-icon="arrow-l" data-iconpos="notext" style="top:0px" ></a></div>
+      <center>   
+     <audio id="player02" controls src="/audio/Bible/ko/keb/1-1.mp3" style=" border: 0px solid red"> </audio>
+    </center>
+      
+    </div>
+</div>
+
+</body>
+</html>

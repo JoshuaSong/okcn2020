@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#f44336">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <link rel="stylesheet" href="/assets/framework7_578/css/framework7.bundle.min.css">
+  <link rel="stylesheet" href="/assets/framework7_578/css/framework7-icons.css">
+  
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/dist/css/bootstrap.css" />
+
+    <style>
+       
+
+.listTitle{
+  margin:10px -10px; color: #9f1f24; font-size: 20px; font-weight: 700; background-color: #fff; padding: 0 20px;
+}
+
+		.icon-back:after{
+			font-size: 24px;
+		}
+    .list .item-content{
+    padding-left:0px;
+  }
+  #overlay {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    right: 0;
+    width: 80%;
+    bottom: 0;
+
+    background:black;
+    background:rgba(0,0,0,0.8);
+
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+}
+#blurimg {
+    
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px) grayscale(50%);
+}
+.list .item-media {
+  padding-top:2px;
+  padding-bottom:2px;
+}
+    </style>
+
+</head>
+
+<body class="color-theme-pink">
+<div id="app">
+<div class="view view-main view-init">
+
+
+
+<div class="page">
+<div class="navbar" style="background-color:#9f1f24;  height:60px;">
+  <div class="navbar-inner" style="padding-left: 15px;">
+           
+    <div class="left" >
+        <a href="#" class="link back"  onclick="closechannel()">
+          <i class="icon icon-back" style="color:#fff; font-size: 22px"></i>
+        </a>
+    </div>
+         
+     <div class="title sliding " style="color:#fff; padding-left: 5px; font-size: 24px; font-weight: 500;" ><?php echo $channel->channel_title;?></div>
+              
+   </div>
+</div>
+  
+	<div id="channelcontent" class="page-content  ptr-content ptr-bottom" style="padding-top: 50px;">	
+  <div>
+    
+    <img id="blurimg" class="img-responsive" src="<?php echo  $channel->channel_poster;?>" style=" width: 100%; ">
+  <div>
+    <img class="img-responsive" src="<?php echo  $channel->channel_poster;?>" style="width: 100%;clip-path: inset(0 70% 0 0);  position: absolute; top:50px ; left:0;">
+
+    <div style="width: 70%; height: 100%; position: absolute; top:50px ; left:30%; background: rgba(159, 31, 37, 0.4); ">
+      <p style="padding:20px;font-size: 16px !important; color: #fff; font-weight: 900; text-shadow: 2px 2px 8px #555;"><?php  if(isset( $channel->summary)) echo $channel->summary;?></p>
+    </div>
+  </div>
+  </div>
+   
+			
+  <div class="list media-list" style="margin-top: 0px;">
+  
+
+  <ul id="channelul">
+  <?php $i=$channel->count; foreach($programs as $row) if(isset($row)) { ?>
+    <li>
+      <a class="item-link item-content" programid="<?php echo $row->p_id;?>" programcount="<?php echo $i;?>" onclick="playthisprogram(this)">
+        <div class="item-media"><div class="item-text" style="width: 50px;font-size: 12px; color: #9f1f24; text-align: right; padding-right: 10px;"><?php echo $i.'회';?></div>
+          <img src="/images/playbutton1.png" width="40"/>
+        </div>
+        <div class="item-inner">
+         
+            <div class="item-text" style="font-size:14px; padding-right: 15px;"><?php echo '['.$row->program_date.']'.$row->program_title;?></div>
+            
+          
+         
+        </div>
+      </a>
+    </li>
+	<?php $i--; }?>
+
+
+
+  </ul>
+   </div>
+   <div class="ptr-preloader">
+    <div class="preloader"></div>
+    <div class="ptr-arrow"></div>
+  </div>
+</div>
+</div>
+</div>
+<script src="/assets/framework7_578/js/framework7.bundle.min.js"></script>
+    <script type="text/javascript" src="/assets/green/js/libs/jquery-1.10.2.min.js"></script>
+
+<script>
+var app = new Framework7({root: '#app'});
+var $$ = Dom7;
+var $ptrContent = $$('.ptr-content');
+var cid = '<?php echo $channel->c_id;?>';
+$ptrContent.on('ptr:refresh', function (e) {
+  var pid =  $('.item-link').last().attr('programid');
+  var pcount = $('.item-link').last().attr('programcount');
+  if(pcount>1)
+  {
+    $.get('/app/morechannelprogram/<?php echo $channel->c_id;?>/' + pid + '/' + pcount , function (data) {
+    $('#channelul').append(data);
+   
+     $$('.page-content').scrollTop($('.page-content').get(0).scrollHeight, 400);
+   })
+  }
+  app.ptr.done(); 
+   });
+
+   function closechannel()
+   {
+   
+
+  if (app.device.android) 
+  {
+    Android.closechannel();
+   } else 
+   {
+    webkit.messageHandlers.callbackHandler.postMessage("closechannel");
+    }
+   }
+   function playthisprogram(e)
+   {
+     var cpid =  cid + "/" + $(e).attr('programid');
+  
+     if (app.device.android) 
+  {
+    Android.playthisprogram(cpid);
+   } else 
+   {
+    webkit.messageHandlers.callbackHandler.postMessage(cpid);
+    }
+
+
+   }
+</script>
+ 
+</body>
+
+</html>

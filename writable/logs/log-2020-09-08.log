@@ -1,0 +1,73 @@
+CRITICAL - 2020-09-08 00:00:21 --> syntax error, unexpected '<', expecting end of file
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/Router/Router.php(195): CodeIgniter\Router\Router->autoRoute('/okcn/home')
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(796): CodeIgniter\Router\Router->handle('/okcn/home')
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(367): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-08 00:01:48 --> Class 'App\Controllers\Controller' not found
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-09-08 00:01:50 --> Class 'App\Controllers\Controller' not found
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-09-08 00:03:07 --> Cannot call constructor
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:03:08 --> Cannot call constructor
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:03:27 --> Cannot call constructor
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:03:29 --> Cannot call constructor
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:04:19 --> Cannot call constructor
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:04:27 --> Cannot call constructor
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:04:29 --> Cannot call constructor
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:04:35 --> Call to a member function database() on null
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:04:37 --> Call to a member function database() on null
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-08 00:04:38 --> Call to a member function library() on null
+#0 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(893): App\Controllers\Okcn->__construct()
+#1 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(402): CodeIgniter\CodeIgniter->createController()
+#2 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/system/CodeIgniter.php(315): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/okcn2admin/Dropbox/OKCNserver/okcn2020/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

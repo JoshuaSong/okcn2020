@@ -1,0 +1,69 @@
+﻿    .tablefloat
+    {
+    	float:right;
+    	padding-right:10px;
+    	height: 145px;
+    	}
+   table.tablefloat td
+   {
+   	
+   	vertical-align:middle;
+   	text-align: right;
+   	}
+    	.reftop,.reftrans,.refbot
+    	{
+    		FONT-SIZE: 15px;
+COLOR: #f9f9f9;
+LINE-HEIGHT: 14px;
+FONT-FAMILY: Arial, Helvetica, Sans-serif;
+FONT-WEIGHT: 700;
+TEXT-DECORATION: none;
+TEXT-Align: justify;
+
+}
+.refheb {
+FONT-SIZE: 15px;
+COLOR: #9b3e00;
+LINE-HEIGHT: 21px;
+FONT-FAMILY: Arial, Helvetica, Sans-serif;
+FONT-WEIGHT: 700;
+TEXT-DECORATION: none;
+TEXT-Align: justify;
+}
+.strongs {
+FONT-SIZE: 18px;
+COLOR: #008000;
+LINE-HEIGHT: 14px;
+FONT-FAMILY: Arial, Helvetica, Sans-serif;
+TEXT-DECORATION: none;
+}
+.translit {
+FONT-SIZE: 15px;
+COLOR: #0066aa;
+LINE-HEIGHT: 23px;
+FONT-FAMILY: Arial, Helvetica, Sans-serif;
+TEXT-DECORATION: none;
+}
+.hebrew {
+FONT-SIZE: 21px;
+COLOR: #001320;
+LINE-HEIGHT: 32px;
+FONT-FAMILY: Ezra SIL, SBL Hebrew, Cardo, Palatino Linotype, Arial, Helvetica, Sans-serif;
+TEXT-DECORATION: none TEXT-Align: justify;
+}
+.eng {
+FONT-SIZE: 15px;
+COLOR: #d55500;
+LINE-HEIGHT: 23px;
+FONT-FAMILY: Arial, Helvetica, Sans-serif;
+TEXT-DECORATION: none;
+}
+.title {
+FONT-SIZE: 16px;
+LINE-HEIGHT: 44px;
+FONT-WEIGHT: bold;
+FONT-Style: italic;
+COLOR: #552200;
+FONT-FAMILY: Arial, Helvetica, Sans-serif;
+TEXT-DECORATION: none;
+}

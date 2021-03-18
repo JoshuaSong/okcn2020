@@ -1,0 +1,59 @@
+html, body {
+	background-color: #014377;
+}
+.navbar-default {
+  background-color: #c51522;
+  border-color: #c51522;
+}
+#footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:100px;
+    width:100%;
+    background-image: url(/src/images/tbg.png);
+    background-repeat: repeat;
+    z-index: 10;
+    
+}
+.jp-video-270p {
+width: 100%;
+}
+.jp-playlist li
+{
+	display: none;
+}
+#shareTd:hover
+{
+
+}
+.navbar-default {
+  background-color: #c51522;
+  border-color: #c51522;
+}
+.commtalbe
+{
+	width:100%;
+}
+
+.commtalbe td
+{
+	padding: 10px 5px 10px 5px; color:#555555;
+}
+.commtalbe tr.odd{
+	background: #b8d1f3;
+}
+
+.commtalbe tr.even
+{
+	background: #dae5f4;
+}
+.namespan {
+	color:#00609E; font-weight: 700; padding-right: 10px;
+}
+.timespan{
+	font-size: 10px; color:#555555; padding-left: 5px;
+}
+.timeimg{
+	width: 10px;
+}

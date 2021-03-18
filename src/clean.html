@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Clean jPlayer skin: Example</title>
+            <link rel="stylesheet" href="https://prahec.com/projects/clean-jplayer-skin/player.css">
+            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+            <script type="text/javascript" src="https://prahec.com/projects/clean-jplayer-skin/jquery.jplayer.js"></script>
+            <script type="text/javascript" src="https://prahec.com/projects/clean-jplayer-skin/jplayer.cleanskin.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $(document).find('.webPlayer').each(function() { $('#'+this.id).videoPlayer(); });
+                });
+            </script>
+        </head>
+        <body>
+            <div id="uniquePlayer-1" class="webPlayer light audioPlayer">
+                <div id="uniqueContainer-1" class="videoPlayer"></div>
+                <div style="display:none;" class="playerData">
+               
+                    {
+                    "name": "Dj Jacky - HouseFire XXIII (2013)",
+                        "size": {
+                            "width": "600px",
+                        },
+                        "media": {
+                            "mp3": "\/projects\/clean-jplayer-skin\/Dj Jacky - HouseFire XXIII (2013).mp3",
+                        }
+                    }
+                </div>
+            </div>
+        </body>
+</html>

@@ -1,0 +1,1 @@
+﻿CKEDITOR.plugins.setLang("colordialog","id",{clear:"确定",highlight:"Sorot",options:"Pilihan Warna",selected:"Warna Dipilih",title:"Pilih Warna"});
